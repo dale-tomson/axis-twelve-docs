@@ -2,10 +2,6 @@
 
 Official documentation website for [Axis Twelve](https://github.com/dale-tomson/axis-twelve) - A modern, modular CSS framework.
 
-## 🌐 Live Site
-
-Visit the documentation at: [https://axis-twelve-docs.vercel.app](https://axis-twelve-docs.vercel.app) *(Update with your deployment URL)*
-
 ## 📖 About
 
 This is the comprehensive documentation site for Axis Twelve, covering both:
