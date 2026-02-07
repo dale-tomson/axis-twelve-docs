@@ -18,7 +18,7 @@ const Sidebar = () => {
         <div className="ax-mb-8 ax-flex ax-items-center ax-gap-4">
           {/* Axis-Twelve Logo */}
           <img 
-            src="/logo.svg" 
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo.svg`}
             alt="Axis-Twelve" 
             className="ax-w-8 ax-h-8"
           />
