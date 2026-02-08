@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import { usePathname } from 'next/navigation';
@@ -12,10 +12,13 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
   const closeSidebar = () => setIsSidebarOpen(false);
 
+  const [prevPathname, setPrevPathname] = useState(pathname);
+
   // Close sidebar on navigation (mobile)
-  useEffect(() => {
-    closeSidebar();
-  }, [pathname]);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setIsSidebarOpen(false);
+  }
 
   return (
     <div className="ax-flex ax-bg-white ax-h-screen">

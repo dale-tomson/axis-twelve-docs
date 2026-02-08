@@ -1,0 +1,48 @@
+{
+    "module": "axis-tooltips",
+    "version": "2.0.2",
+    "description": "CSS-only, data-driven tooltip system requiring zero JavaScript.",
+    "installation": {
+        "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
+        "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-tooltips.min.css"
+    },
+    "attributes": [
+        {
+            "name": "data-ax-tooltip",
+            "description": "The text content of the tooltip.",
+            "default": "None"
+        },
+        {
+            "name": "data-ax-tooltip-position",
+            "description": "Position: top, bottom, left, right.",
+            "default": "top"
+        },
+        {
+            "name": "data-ax-tooltip-multiline",
+            "description": "Enables wrapping for long text.",
+            "default": "false"
+        }
+    ],
+    "examples": [
+        {
+            "title": "Multi-position Showcase",
+            "description": "Demonstrating top, right, and bottom positioning using data attributes.",
+            "code": "<div class=\"ax-flex ax-gap-6 ax-p-8 ax-flex-wrap ax-justify-center\">\n  <button class=\"ax-btn ax-btn--sm ax-btn--primary\" data-ax-tooltip=\"Default top tooltip\">Top View</button>\n  <button class=\"ax-btn ax-btn--sm\" data-ax-tooltip=\"Right positioned tooltip\" data-ax-tooltip-position=\"right\">Right View</button>\n  <button class=\"ax-btn ax-btn--sm\" data-ax-tooltip=\"This is a multiline tooltip that wraps automatically when enabled.\" data-ax-tooltip-position=\"bottom\" data-ax-tooltip-multiline=\"true\">Bottom Multiline</button>\n</div>"
+        }
+    ],
+    "notes": [
+        "Does not work on void elements (input, img) without a wrapper.",
+        "Positions are logical and adapt to RTL automatically."
+    ],
+    "accessibility": [
+        "Visible on both :hover and :focus",
+        "Ensure description is also in aria-label if needed"
+    ],
+    "evolution": [
+        {
+            "version": "v2.0.1",
+            "type": "Feature",
+            "description": "Switched to Logical Positioning with physical fallbacks."
+        }
+    ]
+}

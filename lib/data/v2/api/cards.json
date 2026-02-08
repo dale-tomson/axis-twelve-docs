@@ -1,0 +1,70 @@
+{
+    "module": "axis-cards",
+    "version": "2.0.2",
+    "description": "Versatile content containers for everything from simple boxes to complex content dashboards.",
+    "installation": {
+        "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
+        "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-cards.min.css"
+    },
+    "classes": [
+        {
+            "name": ".ax-card",
+            "description": "Base card container.",
+            "type": "Base"
+        },
+        {
+            "name": ".ax-card__header",
+            "description": "Top section of the card.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-card__body",
+            "description": "Main content area.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-card__footer",
+            "description": "Bottom section for metadata or actions.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-card__title",
+            "description": "Styled title for use within __body.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-card__text",
+            "description": "Styled text for use within __body.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-card__image",
+            "description": "Full-width image that adheres to card rounding.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-card--shadow",
+            "description": "Adds a subtle box-shadow for depth.",
+            "type": "Modifier"
+        }
+    ],
+    "examples": [
+        {
+            "title": "Interactive Profile Card",
+            "description": "A complex card layout with a shadow modifier, image placeholder, and footer actions.",
+            "code": "<div class=\"ax-card ax-card--shadow\" style=\"max-width: 320px;\">\n  <div class=\"ax-p-6\">\n    <div class=\"ax-flex ax-items-center ax-gap-4 ax-mb-4\">\n      <div class=\"ax-w-16 ax-h-16 ax-rounded-full ax-bg-gray-200\"></div>\n      <div>\n        <h3 class=\"ax-card__title\">Jane Doe</h3>\n        <p class=\"ax-card__text ax-text-sm\">Lead Designer</p>\n      </div>\n    </div>\n    <p class=\"ax-card__text\">Specializing in minimal UI design and atomic CSS architectures.</p>\n  </div>\n  <div class=\"ax-card__footer ax-flex ax-justify-end ax-gap-2\">\n    <button class=\"ax-btn ax-btn--sm\">Message</button>\n    <button class=\"ax-btn ax-btn--primary ax-btn--sm\">Follow</button>\n  </div>\n</div>"
+        },
+        {
+            "title": "Product Showcase",
+            "description": "Example of a card used for product listings with an image top section.",
+            "code": "<div class=\"ax-card\" style=\"max-width: 300px;\">\n  <div class=\"ax-h-40 ax-bg-gray-100 ax-flex ax-items-center ax-justify-center ax-text-gray-400\">\n    Product Image\n  </div>\n  <div class=\"ax-p-4\">\n    <h3 class=\"ax-card__title\">Premium Headphones</h3>\n    <p class=\"ax-card__text\">Noise-cancelling with 40-hour battery life.</p>\n    <div class=\"ax-flex ax-justify-between ax-items-center ax-mt-4\">\n      <span class=\"ax-text-xl ax-font-bold\">$299</span>\n      <button class=\"ax-btn ax-btn--primary ax-btn--sm\">Add</button>\n    </div>\n  </div>\n</div>"
+        }
+    ],
+    "evolution": [
+        {
+            "version": "v2.0.1",
+            "type": "Internal",
+            "description": "Refactored internal pacing and layout to use logical properties."
+        }
+    ]
+}

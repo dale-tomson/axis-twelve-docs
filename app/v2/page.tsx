@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { v2Modules, v2Changelog } from '@/lib/v2-data';
+import { v2Modules, v2Changelog, apiIndex } from '@/lib/v2-data';
 
 export default function V2Index() {
   return (
@@ -11,7 +11,7 @@ export default function V2Index() {
         <p className="ax-text-gray-600 ax-mb-4">
           Axis-Twelve V2 introduces a completely new modular architecture. You can now import only the modules you need, keeping your bundle size minimal.
         </p>
-         <div className="ax-bg-gray-100 ax-p-4" style={{ backgroundColor: '#f0fdf4', borderLeft: '4px solid #4ade80' }}>
+         <div className="ax-bg-gray-100 ax-p-4 ax-mb-6" style={{ backgroundColor: '#f0fdf4', borderLeft: '4px solid #4ade80' }}>
           <div className="ax-flex">
             <div className="ax-shrink-0">
               <svg className="ax-h-5 ax-w-5" style={{ color: '#4ade80', width: '1.25rem', height: '1.25rem' }} viewBox="0 0 20 20" fill="currentColor">
@@ -25,6 +25,27 @@ export default function V2Index() {
             </div>
           </div>
         </div>
+
+        <div className="ax-grid ax-gap-4">
+          <div className="ax-col-12 ax-col-md-4">
+            <div className="ax-p-4 ax-bg-white ax-border ax-border-gray-200 ax-rounded-xl ax-text-center">
+              <div className="ax-text-xs ax-text-gray-500 ax-uppercase ax-tracking-wider ax-mb-1">Standard</div>
+              <div className="ax-text-2xl ax-font-bold ax-text-primary">{apiIndex.assets.stats.standard}</div>
+            </div>
+          </div>
+          <div className="ax-col-12 ax-col-md-4">
+            <div className="ax-p-4 ax-bg-white ax-border ax-border-gray-200 ax-rounded-xl ax-text-center">
+              <div className="ax-text-xs ax-text-gray-500 ax-uppercase ax-tracking-wider ax-mb-1">Minified</div>
+              <div className="ax-text-2xl ax-font-bold ax-text-primary">{apiIndex.assets.stats.minified}</div>
+            </div>
+          </div>
+          <div className="ax-col-12 ax-col-md-4">
+            <div className="ax-p-4 ax-bg-white ax-border ax-border-gray-200 ax-rounded-xl ax-text-center">
+              <div className="ax-text-xs ax-text-gray-500 ax-uppercase ax-tracking-wider ax-mb-1">Gzipped</div>
+              <div className="ax-text-2xl ax-font-bold ax-text-primary">{apiIndex.assets.stats.gzipped}</div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="ax-mb-12">
@@ -32,9 +53,17 @@ export default function V2Index() {
          <div className="ax-grid ax-gap-4">
           {v2Modules.map((module) => (
             <div key={module.slug} className="ax-col-12 ax-col-md-6 ax-col-lg-4">
-                <Link href={`/v2/modules/${module.slug}`} className="ax-block ax-p-6 ax-border ax-border-gray-200 ax-rounded-lg ax-hover-shadow-md ax-transition-colors">
-                <h3 className="ax-text-lg ax-font-bold ax-mb-2 ax-text-gray-900">{module.title}</h3>
-                <p className="ax-text-sm ax-text-gray-600">{module.description}</p>
+                <Link href={`/v2/modules/${module.slug}`} className="ax-block ax-p-6 ax-border ax-border-gray-200 ax-rounded-xl ax-hover-shadow-md ax-transition-all ax-bg-white ax-group">
+                  <h3 className="ax-text-lg ax-font-bold ax-mb-2 ax-text-gray-900 ax-group-hover-text-primary ax-transition-colors">{module.title}</h3>
+                  <p className="ax-text-sm ax-text-gray-600 ax-mb-4">{module.description}</p>
+                  <div className="ax-flex ax-gap-3 ax-pt-3 ax-border-t ax-border-gray-50">
+                    <div className="ax-text-[10px] ax-text-gray-400 ax-uppercase ax-tracking-wider">
+                      Min: <span className="ax-font-bold ax-text-gray-600">{module.stats.minified}</span>
+                    </div>
+                    <div className="ax-text-[10px] ax-text-gray-400 ax-uppercase ax-tracking-wider">
+                      Zip: <span className="ax-font-bold ax-text-gray-600">{module.stats.gzipped}</span>
+                    </div>
+                  </div>
                 </Link>
             </div>
           ))}

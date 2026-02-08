@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { v1Features } from '@/lib/v1-data';
 import { v2Modules } from '@/lib/v2-data';
 import SearchInput from './SearchInput';
@@ -18,9 +19,11 @@ const Sidebar = ({ onClose }: { onClose?: () => void }) => {
         <div className="ax-mb-8 ax-flex ax-items-center ax-justify-between">
           <div className="ax-flex ax-items-center ax-gap-4">
             {/* Axis-Twelve Logo */}
-            <img 
+            <Image 
               src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo.svg`}
               alt="Axis-Twelve" 
+              width={32}
+              height={32}
               className="ax-w-8 ax-h-8"
             />
             <Link href="/" className="ax-text-xl ax-font-bold ax-text-gray-900 ax-tracking-tight">

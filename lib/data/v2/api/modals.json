@@ -1,0 +1,70 @@
+{
+    "module": "axis-modals",
+    "version": "2.0.2",
+    "description": "Powerful, CSS-only dialog system using data-attributes and transitions.",
+    "installation": {
+        "full": "https://unpkg.com/axis-twelve@2.0.2/dist/axis-twelve.min.css",
+        "module": "https://unpkg.com/axis-twelve@2.0.2/dist/modules/axis-modals.min.css"
+    },
+    "classes": [
+        {
+            "name": ".ax-modal",
+            "description": "Main container. Controlled by data-open.",
+            "type": "Base"
+        },
+        {
+            "name": ".ax-modal__backdrop",
+            "description": "The semi-transparent overlay.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-modal__dialog",
+            "description": "The actual modal box.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-modal__header",
+            "description": "Header with close button.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-modal__body",
+            "description": "Main content area.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-modal__footer",
+            "description": "Footer for action buttons.",
+            "type": "Element"
+        },
+        {
+            "name": ".ax-modal__dialog--sm",
+            "description": "Small modal width (300px).",
+            "type": "Modifier"
+        },
+        {
+            "name": ".ax-modal__dialog--lg",
+            "description": "Large modal width (800px).",
+            "type": "Modifier"
+        }
+    ],
+    "examples": [
+        {
+            "title": "Confirmation Dialog",
+            "description": "A structured modal with header, body, and action buttons in the footer.",
+            "code": "<div class=\"ax-modal\" data-open=\"true\" style=\"display: block !important; position: relative !important; z-index: 1; opacity: 1 !important; visibility: visible !important;\">\n  <div class=\"ax-modal__backdrop\" style=\"position: absolute !important; border-radius: 0.75rem; display: block !important; opacity: 1 !important; visibility: visible !important;\"></div>\n  <div class=\"ax-modal__dialog ax-modal__dialog--sm ax-p-0 ax-m-auto ax-relative\" style=\"display: block !important; opacity: 1 !important; visibility: visible !important;\">\n    <div class=\"ax-modal__header ax-p-4 ax-border-b\">\n      <h3 class=\"ax-text-lg ax-font-bold\">Discard Changes?</h3>\n    </div>\n    <div class=\"ax-modal__body ax-p-4\">\n      <p class=\"ax-text-sm ax-text-gray-600\">You have unsaved changes. Are you sure you want to leave this page?</p>\n    </div>\n    <div class=\"ax-modal__footer ax-p-4 ax-border-t ax-flex ax-justify-end ax-gap-2\">\n      <button class=\"ax-btn ax-btn--sm\">Stay</button>\n      <button class=\"ax-btn ax-btn--primary ax-btn--sm\">Discard</button>\n    </div>\n  </div>\n</div>"
+        }
+    ],
+    "accessibility": [
+        "Add role=\"dialog\" and aria-modal=\"true\"",
+        "Use aria-labelledby for the title",
+        "Focus trap recommended via minimal JS"
+    ],
+    "evolution": [
+        {
+            "version": "v2.0.1",
+            "type": "Internal",
+            "description": "Refactored modal pacing and alignment to use logical properties."
+        }
+    ]
+}
