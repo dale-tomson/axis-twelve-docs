@@ -9,8 +9,7 @@ import "axis-twelve/cards.css";
 import "axis-twelve/tooltips.css";
 import "./globals.css";
 import "./axis-utilities.css";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
+import LayoutWrapper from "../components/LayoutWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,17 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="ax-flex ax-bg-white ax-h-screen">
-          <Sidebar />
-            <div className="ax-main-wrapper ax-w-full">
-              <Header />
-              <main className="ax-content">
-                <div className="ax-container">
-                    {children}
-                </div>
-              </main>
-            </div>
-        </div>
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

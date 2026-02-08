@@ -1,13 +1,25 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Header = () => {
+const Header = ({ onMenuClick }: { onMenuClick?: () => void }) => {
   return (
     <header className="ax-header">
-      <div className="ax-text-sm ax-font-medium ax-text-gray-400">
-        Documentation
+      <div className="ax-flex ax-items-center ax-gap-3">
+        {/* Menu Toggle for mobile */}
+        <button 
+          onClick={onMenuClick}
+          className="ax-lg-show ax-text-gray-400 ax-hover-text-gray-600 ax-transition-colors"
+        >
+          <svg className="ax-w-6 ax-h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        
+        <div className="ax-text-sm ax-font-medium ax-text-gray-400 ax-sm-hidden">
+          Documentation
+        </div>
       </div>
-      <nav className="ax-flex ax-items-center ax-space-x-6">
+      <nav className="ax-flex ax-items-center ax-space-x-6 ax-lg-hidden">
         <Link href="/" className="ax-text-sm ax-font-medium ax-text-gray-600 ax-hover-text-primary ax-transition-colors">
           Home
         </Link>
