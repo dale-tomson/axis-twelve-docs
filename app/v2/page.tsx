@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { v2Modules, v2Changelog, apiIndex } from '@/lib/v2-data';
+import CodeBlock from '@/components/CodeBlock';
 
 export default function V2Index() {
   return (
@@ -43,6 +44,40 @@ export default function V2Index() {
             <div className="ax-p-4 ax-bg-white ax-border ax-border-gray-200 ax-rounded-xl ax-text-center">
               <div className="ax-text-xs ax-text-gray-500 ax-uppercase ax-tracking-wider ax-mb-1">Gzipped</div>
               <div className="ax-text-2xl ax-font-bold ax-text-primary">{apiIndex.assets.stats.gzipped}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="ax-mb-12">
+        <h2 className="ax-text-2xl ax-font-semibold ax-mb-6 ax-text-gray-800">Getting Started</h2>
+        <div className="ax-grid ax-gap-6">
+          <div className="ax-col-12 ax-col-md-6">
+            <div className="ax-p-6 ax-bg-white ax-border ax-border-gray-200 ax-rounded-2xl ax-h-full ax-flex ax-flex-column">
+              <h3 className="ax-text-lg ax-font-bold ax-mb-3 ax-text-gray-900 ax-flex ax-items-center">
+                <span className="ax-w-2 ax-h-2 ax-bg-primary ax-rounded-full ax-mr-2"></span>
+                Package Manager
+              </h3>
+              <p className="ax-text-sm ax-text-gray-600 ax-mb-4 ax-flex-1">Install Axis-Twelve via npm, pnpm, or yarn to get the full modular SCSS source.</p>
+              <div className="ax-rounded-xl ax-overflow-hidden ax-border ax-border-gray-100">
+                <CodeBlock code={`npm install axis-twelve@${apiIndex.version}`} language="bash" />
+              </div>
+            </div>
+          </div>
+          
+          <div className="ax-col-12 ax-col-md-6">
+            <div className="ax-p-6 ax-bg-white ax-border ax-border-gray-200 ax-rounded-2xl ax-h-full ax-flex ax-flex-column">
+              <h3 className="ax-text-lg ax-font-bold ax-mb-3 ax-text-gray-900 ax-flex ax-items-center">
+                <span className="ax-w-2 ax-h-2 ax-bg-orange-500 ax-rounded-full ax-mr-2"></span>
+                Direct Link (CDN)
+              </h3>
+              <p className="ax-text-sm ax-text-gray-600 ax-mb-4 ax-flex-1">Drop the full bundle into your project via UNPKG for a zero-config setup.</p>
+              <div className="ax-rounded-xl ax-overflow-hidden ax-border ax-border-gray-100">
+                <CodeBlock 
+                  code={`<link rel="stylesheet" href="https://unpkg.com/axis-twelve@${apiIndex.version}/dist/axis-twelve.min.css">`} 
+                  language="html" 
+                />
+              </div>
             </div>
           </div>
         </div>
